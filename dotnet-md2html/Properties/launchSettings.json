@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dotnet-md2html": {
+      "commandName": "Project",
+      "commandLineArgs": "-e -i \"C:\\Users\\j-sakamoto\\Google ドライブ\\Telc - j-skamoto\\Projects\\U-TRACK\\マニュアル\\RFID Scanners - Setup Manual\\U-TRACK - RFID and Image Scanners - Setup Manual.md\" -o \"c:\\work\\test.html\""
+    }
+  }
+}
