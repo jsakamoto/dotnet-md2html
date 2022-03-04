@@ -20,9 +20,9 @@ After NuGet package restoring, you can use `dotnet md2html` command in the proje
 
 ### Case 2. Install as a global tool
 
-
 ```shell
-> dotnet tool install -g dotnet-md2html --version 1.0.0.1-preview1
+dotnet tool install -g dotnet-md2html --version 1.0.0.1-preview1
+dotnet-md2html -i {input-file} -o {output-file}
 ```
 
 See also Microsoft Docs site.
