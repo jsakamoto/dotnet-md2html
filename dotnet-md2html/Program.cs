@@ -20,24 +20,31 @@ namespace DotNet.MarkdownToHtml
                 return;
             }
 
-            var converterOptions = new MarkdownToHtmlConverterOptions
+            try
             {
-                BaseDirectory = !string.IsNullOrEmpty(cmdLineOptions.InputPath) ? Path.GetDirectoryName(cmdLineOptions.InputPath) : null,
-                EmbedImage = cmdLineOptions.EmbedImage
-            };
+                var converterOptions = new MarkdownToHtmlConverterOptions
+                {
+                    BaseDirectory = !string.IsNullOrEmpty(cmdLineOptions.InputPath) ? Path.GetDirectoryName(cmdLineOptions.InputPath) : null,
+                    EmbedImage = cmdLineOptions.EmbedImage
+                };
 
-            var input = Console.In;
-            var output = Console.Out;
-            if (!string.IsNullOrEmpty(cmdLineOptions.InputPath))
-            {
-                input = new StreamReader(cmdLineOptions.InputPath, encoding: Encoding.UTF8);
-            }
-            if (!string.IsNullOrEmpty(cmdLineOptions.OutputPath))
-            {
-                output = new StreamWriter(cmdLineOptions.OutputPath, append: false, encoding: Encoding.UTF8);
-            }
+                var input = Console.In;
+                var output = Console.Out;
+                if (!string.IsNullOrEmpty(cmdLineOptions.InputPath))
+                {
+                    input = new StreamReader(cmdLineOptions.InputPath, encoding: Encoding.UTF8);
+                }
+                if (!string.IsNullOrEmpty(cmdLineOptions.OutputPath))
+                {
+                    output = new StreamWriter(cmdLineOptions.OutputPath, append: false, encoding: Encoding.UTF8);
+                }
 
-            MarkdownToHtmlConverter.Convert(input, output, converterOptions);
+                MarkdownToHtmlConverter.Convert(input, output, converterOptions);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Environment.Exit(1);
+            }
         }
     }
 }

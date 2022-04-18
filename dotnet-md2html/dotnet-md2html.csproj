@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.0;netcoreapp2.2;netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>DotNet.MarkdownToHtml</RootNamespace>
     <PackAsTools>true</PackAsTools>
-    <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
     <Version>1.0.0.1-preview1</Version>
     <Authors>J.Sakamoto</Authors>
     <Copyright>Copyright J.Sakamoto 2019</Copyright>
     <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
     <Description>Yet another implementation of the Markdown Text to HTML Converter, built on .NET Core console application.</Description>
+    <ToolCommandName>dotnet-md2html</ToolCommandName>
   </PropertyGroup>
 
   <ItemGroup>
